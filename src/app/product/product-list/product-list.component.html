@@ -1,0 +1,21 @@
+<div class="table-responsive">
+  <table class="table table-striped" *ngIf="products && products.length">
+    <thead>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Date</th>
+      <th>Price</th>
+      <th>Star rating</th>
+    </thead>
+    <tbody>
+      <tr *ngFor='let product of products'>
+        <td>{{product.productName}}</td>
+        <td>{{product.productCode}}</td>
+        <td>{{product.releaseDate}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.starRating}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
