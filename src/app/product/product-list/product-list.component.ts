@@ -6,7 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  products = [
+  showImage: boolean = true;
+  buttonText: string = "Show";
+  listFilter: string = "asdf"
+
+
+  products: IProduct[] = [
       {
           "id": 1,
           "productName": "Leaf Rake",
@@ -61,7 +66,34 @@ export class ProductListComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
+
   }
 
+  toggleImage(): void{
+    this.showImage = !this.showImage;
+
+    // if (!this.showImage){
+    //   this.buttonText = "hide"
+    // }
+    // else{
+    //   this.buttonText = "show"
+    // }
+
+    console.log("toogle")
+  }
+
+
+
+}
+
+export interface IProduct{
+  id: number;
+  productName: string;
+  productCode: string;
+  releaseDate: string;
+  price: number;
+  description: string;
+  starRating: number;
+  imageUrl: string;
+  //calculateDiscount(percent: number): number;
 }

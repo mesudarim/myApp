@@ -1,6 +1,11 @@
 <div class="table-responsive">
+  <div>My variable value: {{listFilter}}</div>
+<input [(ngModel)]='listFilter' type="text" value ="a">
   <table class="table table-striped" *ngIf="products && products.length">
     <thead>
+      <th><button (click) = "toggleImage()">
+      {{showImage? "hide": "show"}} image
+      </button></th>
       <th>Name</th>
       <th>Code</th>
       <th>Date</th>
@@ -9,11 +14,13 @@
     </thead>
     <tbody>
       <tr *ngFor='let product of products'>
+        <td><img [src] ='product.imageUrl' width = "20px" *ngIf="showImage"/></td>
         <td>{{product.productName}}</td>
         <td>{{product.productCode}}</td>
         <td>{{product.releaseDate}}</td>
         <td>{{product.price}}</td>
         <td>{{product.starRating}}</td>
+        <td>{{product.productName | reverse}}</td>
       </tr>
 
     </tbody>
