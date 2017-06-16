@@ -13,7 +13,7 @@
       <th>Star rating</th>
     </thead>
     <tbody>
-      <tr *ngFor='let product of products'>
+      <tr *ngFor='let product of (products | productFilter:listFilter)'>
         <td><img [src] ='product.imageUrl' width = "20px" *ngIf="showImage"/></td>
         <td>{{product.productName}}</td>
         <td>{{product.productCode}}</td>

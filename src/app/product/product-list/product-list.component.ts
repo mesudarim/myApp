@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProductFilterPipe} from '../product-filter.pipe'
 
 @Component({
   selector: 'app-product-list',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProductListComponent implements OnInit {
   showImage: boolean = true;
   buttonText: string = "Show";
-  listFilter: string = "asdf"
+  listFilter: string = "a"
 
 
   products: IProduct[] = [
@@ -71,19 +72,14 @@ export class ProductListComponent implements OnInit {
 
   toggleImage(): void{
     this.showImage = !this.showImage;
-
     // if (!this.showImage){
     //   this.buttonText = "hide"
     // }
     // else{
     //   this.buttonText = "show"
     // }
-
     console.log("toogle")
   }
-
-
-
 }
 
 export interface IProduct{

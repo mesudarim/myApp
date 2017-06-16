@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { ReversePipe } from './reverse.pipe';
 import { ProductFilterPipe } from './product/product-filter.pipe';
+import { StarComponent } from './star/star.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ProductFilterPipe } from './product/product-filter.pipe';
     HeaderComponent,
     ProductListComponent,
     ReversePipe,
-    ProductFilterPipe
+    ProductFilterPipe,
+    StarComponent
   ],
   imports: [
     BrowserModule,
